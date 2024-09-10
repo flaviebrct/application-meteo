@@ -17,7 +17,10 @@ async function getWeatherData() {
     };
 
     updateUI(sortedData);
-  } catch (error) {}
+  } catch (error) {
+    loader.classList.remove("active");
+    errorInformation.textContent = error.message;
+  }
 }
 getWeatherData();
 
